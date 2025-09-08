@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Short Page</title>
+  <style>
+    :root{--bg:#f7f7fb;--card:#ffffff;--text:#111}
+    [data-dark="true"]{--bg:#0f1724;--card:#0b1220;--text:#e6eef8}
+    body{margin:0;font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text);display:flex;align-items:center;justify-content:center;height:100vh}
+    .card{background:var(--card);padding:24px;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.08);width:min(520px,92vw);text-align:center}
+    h1{margin:0 0 8px;font-size:1.4rem}
+    p{margin:0 0 16px;color:inherit;opacity:.85}
+    button{padding:8px 14px;border-radius:8px;border:0;cursor:pointer;font-weight:600}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Hello, Disha 👋</h1>
+    <p>Short HTML page — click the button to toggle dark/light theme.</p>
+    <button id="toggle">Toggle Theme</button>
+  </div>
+
+  <script>
+    const btn = document.getElementById('toggle');
+    btn.onclick = () => {
+      const dark = document.documentElement.getAttribute('data-dark') === 'true';
+      document.documentElement.setAttribute('data-dark', !dark);
+    };
+  </script>
+</body>
+</html>
